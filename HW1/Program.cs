@@ -4,7 +4,6 @@ m = 3, n = 4.
 1 -3,3 8 -9,9
 8 7,8 -7,1 9  */
 
-
 int m = InputNumber("m");
 int n = InputNumber("n");
 
@@ -15,21 +14,20 @@ PrintArray(array);
 
 void FillArray(double[,] collection)
 {
-    for (int i = 0; i < m; i++)
+    for (int i = 0; i < collection.GetLength(0); i++)
     {
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j < collection.GetLength(1); j++)
         {
             collection[i, j] = new Random().Next(-100, 100) + new Random().NextDouble();
-            Math.Round(collection[i, j], 1);
         }
     }
 }
 
 void PrintArray(double[,] inputArray)
 {
-    for (int i = 0; i < m; i++)
+    for (int i = 0; i < inputArray.GetLength(0); i++)
     {
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j < inputArray.GetLength(1); j++)
         {
             Console.Write(Math.Round(inputArray[i, j], 1) + " ");
         }
