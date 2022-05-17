@@ -7,8 +7,8 @@
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3 */
 
 
-int[,] array = new int [3, 4];
-double[] average = new double [array.GetLength(0)];
+int[,] array = new int [3, 5];
+double[] average = new double [array.GetLength(1)];
 
 FillArray(array);
 PrintArray(array);
@@ -16,10 +16,9 @@ CalculationAverage(array, average);
 Console.WriteLine();
 PrintAverage(average);
 
-
 void CalculationAverage(int[,] InputArray, double[] Calculation)
 {
-double rows = Convert.ToDouble(InputArray.GetLength(1));
+double rows = Convert.ToDouble(InputArray.GetLength(0));
 for (int i = 0; i < InputArray.GetLength(0); i++)
 {
     for (int j = 0; j < InputArray.GetLength(1); j++)
@@ -58,7 +57,7 @@ void PrintAverage(double[] inputArray)
     int position = 0;
     while (position < count)
     {
-        Console.Write($"{Math.Round(inputArray[position], 1)} ");
+        Console.Write($"{Math.Round(inputArray[position], 1)}; ");
         position++;
     }
     Console.WriteLine();
