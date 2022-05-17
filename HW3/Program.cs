@@ -18,14 +18,14 @@ PrintAverage(average);
 
 void CalculationAverage(int[,] InputArray, double[] Calculation)
 {
-double rows = Convert.ToDouble(InputArray.GetLength(0));
-for (int i = 0; i < InputArray.GetLength(0); i++)
-{
-    for (int j = 0; j < InputArray.GetLength(1); j++)
+    double rows = Convert.ToDouble(InputArray.GetLength(0));
+    for (int i = 0; i < InputArray.GetLength(0); i++)
     {
-        Calculation[j] += InputArray[i, j] / rows;
+        for (int j = 0; j < InputArray.GetLength(1); j++)
+        {
+            Calculation[j] += InputArray[i, j] / rows;
+        }
     }
-}
 }
 
 void FillArray(int[,] collection)
