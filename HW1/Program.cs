@@ -4,10 +4,10 @@ m = 3, n = 4.
 1 -3,3 8 -9,9
 8 7,8 -7,1 9  */
 
-int m = InputNumber("m");
-int n = InputNumber("n");
+int row = InputNumber("m");
+int colomn = InputNumber("n");
 
-double[,] array = new double [m, n];
+double[,] array = new double [row, colomn];
 
 FillArray(array);
 PrintArray(array);
