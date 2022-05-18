@@ -5,9 +5,8 @@
 8 4 2 4
 17 -> такого числа в массиве нет */
 
-
-int m = InputNumber("строки");
-int n = InputNumber("столбца");
+int row = InputNumber("строки");
+int colomn = InputNumber("столбца");
 
 int[,] array = new int[5, 6];
 
@@ -15,21 +14,14 @@ FillArray(array);
 PrintArray(array);
 Console.WriteLine();
 
-if(m-1 >= array.GetLength(0) || n-1 >= array.GetLength(1))
+if(row-1 >= array.GetLength(0) || colomn-1 >= array.GetLength(1) || row <= 0 || colomn <= 0)
 {
-    Console.Write($"Эллемент массива под значениями {m}-{n} отсутствует"); 
+    Console.Write($"Эллемент массива под значениями {row}-{colomn} отсутствует"); 
 }
-
-for(int i = 0; i < array.GetLength(0); i++)
+else
 {
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-        if(m-1 == i && n-1 == j)
-        {
-            Console.Write($"Эллемент массива под значениями {m}-{n} равен {array[i, j]}");
-        }
-    }
-}
+    Console.Write($"Элемент массива под значениями {row}-{colomn} равен {array [row-1, colomn-1]}");
+} 
 
 void FillArray(int[,] collection)
 {
