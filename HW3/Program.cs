@@ -6,7 +6,6 @@
 
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3 */
 
-
 int[,] array = new int [3, 5];
 double[] average = new double [array.GetLength(1)];
 
